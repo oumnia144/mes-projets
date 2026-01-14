@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Chronomètre</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .chrono-container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 320px;
+        }
+
+        .chrono-container h1 {
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+
+        #display {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .start {
+            background: #28a745;
+            color: white;
+        }
+
+        .stop {
+            background: #dc3545;
+            color: white;
+        }
+
+        .reset {
+            background: #6c757d;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chrono-container">
+    <h1>Chronomètre</h1>
+    <div id="display">00:00:00</div>
+
+    <div class="buttons">
+        <button class="start" onclick="start()">Démarrer</button>
+        <button class="stop" onclick="stop()">Stop</button>
+        <button class="reset" onclick="reset()">Réinitialiser</button>
+    </div>
+</div>
+
+<script>
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let timer = null;
+
+    function updateDisplay() {
+        let h = hours < 10 ? "0" + hours : hours;
+        let m = minutes < 10 ? "0" + minutes : minutes;
+        let s = seconds < 10 ? "0" + seconds : seconds;
+        document.getElementById("display").innerText = `${h}:${m}:${s}`;
+    }
+
+    function start() {
+        if (timer !== null) return;
+
+        timer = setInterval(() => {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+            }
+            if (minutes === 60) {
+                minutes = 0;
+                hours++;
+            }
+            updateDisplay();
+        }, 1000);
+    }
+
+    function stop() {
+        clearInterval(timer);
+        timer = null;
+    }
+
+    function reset() {
+        stop();
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        updateDisplay();
+    }
+</script>
+
+</body>
+</html>
