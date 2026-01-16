@@ -1,0 +1,62 @@
+
+.hotel-card {
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hotel-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.price-tag {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+nav {
+    padding: 15px 0;
+    position: relative;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+   
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition:color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #0f5f69; 
+}
+nav h2
+{
+    display: flex;
+    justify-content:flex-end;
+    color: rgb(185, 144, 20);
+    font-family: cursive;
+    margin:1px ;
+    margin-left: 750px;
+    text-shadow: 0 8px 10px #00090a74;
+}
+.hero-banner > nav
+{
+    background-color: rgb(220, 210, 161);
+}
+footer
+{
+    background-color: rgb(220, 210, 161);
+    padding: 20px;
+    border: 2px rgb(176, 168, 128) solid;
+}

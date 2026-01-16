@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mes Projets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f5;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #0077cc;
+    }
+    .projects {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 200px;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+    .project-card p {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenue à Mes Projets</h1>
+  <div class="projects">
+    <div class="project-card">
+      <a href="tourism-website/oujda touriste.html" target="_blank">Site Web Oujda</a>
+      <p>Un site touristique pour découvrir les attractions de la ville de Oujda.</p>
+    </div>
+    <div class="project-card">
+      <a href="calculator/calculatrice.html" target="_blank">Calculatrice</a>
+      <p>Une calculatrice simple en HTML, CSS et JavaScript.</p>
+    </div>
+    <div class="project-card">
+      <a href="chronométre/chronométre.html" target="_blank">Chronomètre</a>
+      <p>Un chronomètre fonctionnel avec démarrage, pause et remise à zéro.</p>
+    </div>
+    <div class="project-card">
+      <a href="/">Recherche</a>
+      <p>Une petite application de recherche dynamique en JavaScript.</p>
+    </div>
+  </div>
+</body>
+</html>
