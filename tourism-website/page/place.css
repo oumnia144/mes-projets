@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -12,7 +13,9 @@ body {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.215), rgba(0, 0, 0, 0.226)), url('image/oujda\ 2.webp');background-size: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.215), rgba(0, 0, 0, 0.226)), url('image/oujda\ 2.webp');
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
     padding: 100px 30px;
@@ -70,6 +73,7 @@ nav {
     padding: 15px 0;
     position: absolute;
     z-index: 10;
+    width: 100%;
 }
 
 nav ul {
@@ -78,6 +82,8 @@ nav ul {
     justify-content: flex-start;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 nav ul li {
@@ -102,4 +108,98 @@ nav h2
     margin:1px ;
     margin-left: 750px;
     text-shadow: 0 8px 10px #00090a74;
+}
+
+/* فقط إضافة التجاوب للجوال */
+@media (max-width: 1200px) {
+    nav h2 {
+        margin-left: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    nav h2 {
+        margin-left: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+        margin-top: 80px;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav h2 {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        order: -1;
+        margin-bottom: 10px;
+    }
+    
+    .places-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 30px 0;
+    }
+    
+    .place-card {
+        margin-bottom: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .place-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 15px;
+        margin-top: 70px;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    nav ul li a {
+        font-size: 13px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    .place-image {
+        height: 200px;
+    }
+    
+    .place-details {
+        padding: 15px;
+    }
+    
+    .place-details h3 {
+        font-size: 1.2rem;
+    }
+    
+    .place-details p {
+        font-size: 14px;
+    }
+    
+    .info-button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
 }
